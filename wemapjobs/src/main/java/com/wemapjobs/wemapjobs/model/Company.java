@@ -36,7 +36,7 @@ public class Company {
 	public List<Jobs> jobs;
 	
 	
-	
+    public Company() {}	
 
 	public Company(int companyId, String name, int phoneNumber, String address, String industry) {
 		super();

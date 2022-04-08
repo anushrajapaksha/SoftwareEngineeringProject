@@ -27,6 +27,8 @@ public class Jobcategory {
 	public List<Jobs> job;
 	
 	
+	public Jobcategory() {}
+	
 	public Jobcategory(int job_category_id, String name) {
 		super();
 		this.job_category_id = job_category_id;

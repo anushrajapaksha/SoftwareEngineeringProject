@@ -35,7 +35,7 @@ public class Users {
 	public Personaldetails personaldetails;
 	
 	
-	
+	public Users() {}
 
 	public Users(int userId, String fullName, String email, String password, String type) {
 		super();

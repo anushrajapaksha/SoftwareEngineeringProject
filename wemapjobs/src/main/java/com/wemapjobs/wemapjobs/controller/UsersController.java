@@ -33,6 +33,26 @@ public class UsersController {
     	return userService.findUsers();
     }
     
+    
+    @RequestMapping(value = "/login", method = RequestMethod.GET,
+    		consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Users> login(@RequestBody Users user) throws ServerException{
+    	
+    	String email =user.getEmail();
+    	String password=user.getPassword();
+    	
+    	Users loginUser= userService.findUserByEmailandPassword(email,password);
+    	if (loginUser == null) {
+            throw new ServerException("User not found");
+        } else {
+            return new ResponseEntity<>(user, HttpStatus.FOUND);
+        }
+    
+    }
+    
+    
+    
+    
     @RequestMapping(value = "/saveUser", method = RequestMethod.POST,
     		consumes = MediaType.APPLICATION_JSON_VALUE, 
             produces = MediaType.APPLICATION_JSON_VALUE)

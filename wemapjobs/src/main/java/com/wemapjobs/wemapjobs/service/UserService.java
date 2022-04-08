@@ -13,6 +13,9 @@ public interface UserService {
     // Read operation
     List<Users> findUsers();
  
+    Users findUserByEmailandPassword(String email,String password);
+    
+    
     // Update operation
     Users updateUser(Users users,
                                 Long userId);
